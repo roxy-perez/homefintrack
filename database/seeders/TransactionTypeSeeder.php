@@ -12,16 +12,17 @@ class TransactionTypeSeeder extends Seeder
      */
     public function run(): void
     {
-        // Crear el tipo "Ingreso"
-        TransactionType::create([
+        TransactionType::firstOrCreate([
             'name' => 'Income',
+        ], [
             'description' => 'Represents income transactions',
         ]);
 
-        // Crear el tipo "Gasto"
-        TransactionType::create([
+        TransactionType::firstOrCreate([
             'name' => 'Expense',
+        ], [
             'description' => 'Represents expense transactions',
         ]);
     }
+
 }
